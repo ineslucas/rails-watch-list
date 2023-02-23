@@ -10,3 +10,15 @@ Rails.application.config.assets.version = "1.0"
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
+
+# ADDED 👉 to add the node modules to the assets path
+# config/initializers/assets.rb
+# [...]
+Rails.application.config.assets.paths << Rails.root.join("node_modules")
+
+# Gemfile
+# [...]
+gem "autoprefixer-rails"
+gem "font-awesome-sass", "~> 6.1"
+gem "simple_form", github: "heartcombo/simple_form"
+gem "sassc-rails" # Uncomment this line
